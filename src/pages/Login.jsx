@@ -45,6 +45,14 @@ const Login = () => {
       description: 'Manage patient care'
     },
     {
+      id: 'staff',
+      label: 'Staff',
+      icon: UserCheck,
+      color: 'bg-orange-500 hover:bg-orange-600',
+      email: 'staff@hospital.com',
+      description: 'Hospital operations'
+    },
+    {
       id: 'admin',
       label: 'Admin',
       icon: Shield,

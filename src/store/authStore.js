@@ -18,9 +18,9 @@ const useAuthStore = create(
             name: 'Dr. Keshav',
             role: 'doctor',
             specialty: 'Cardiology',
-            avatar: 'https://www.veryicon.com/icons/miscellaneous/two-color-icon-library/user-286.html'
+            avatar: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=100&h=100&fit=crop&crop=face'
           }
-        } else if (email === 'nurse@hospital.com') {
+        } else if (email === 'staff@hospital.com') {
           user = {
             id: '2',
             email,
@@ -37,6 +37,14 @@ const useAuthStore = create(
             role: 'admin',
             department: 'Administration',
             avatar: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=100&h=100&fit=crop&crop=face'
+          }
+        } else if (email === 'patient@hospital.com') {
+          user = {
+            id: '4',
+            email,
+            name: 'Patient User',
+            role: 'patient',
+            avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face'
           }
         } else {
           throw new Error('Invalid credentials')

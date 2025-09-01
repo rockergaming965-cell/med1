@@ -8,6 +8,7 @@ import usePatientStore from '../store/patientStore'
 import useSurgeryStore from '../store/surgeryStore'
 import useInventoryStore from '../store/inventoryStore'
 import useAuthStore from '../store/authStore'
+import PatientDashboard from '../components/PatientDashboard'
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts'
 
 
@@ -20,6 +21,12 @@ const patientDistribution = [
 
 const Dashboard = () => {
   const { user } = useAuthStore()
+  
+  // Show patient-specific dashboard for patient role
+  if (user?.role === 'patient') {
+    return <PatientDashboard />
+  }
+  
   const { patients } = usePatientStore()
   const { surgeries, getSurgeriesToday } = useSurgeryStore()
   const { inventory, lowStockAlerts, expiryAlerts } = useInventoryStore()

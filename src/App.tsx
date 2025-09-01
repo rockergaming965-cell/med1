@@ -10,6 +10,12 @@ import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Patients from "./pages/Patients";
 import Surgeries from "./pages/Surgeries";
+import Doctors from "./pages/Doctors";
+import Wards from "./pages/Wards";
+import Inventory from "./pages/Inventory";
+import Prescriptions from "./pages/Prescriptions";
+import Monitoring from "./pages/Monitoring";
+import Emergency from "./pages/Emergency";
 import NotFound from "./pages/NotFound";
 
 // Components
@@ -38,13 +44,12 @@ const App = () => (
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/patients" element={<Patients />} />
               <Route path="/surgeries" element={<Surgeries />} />
-              {/* Placeholder routes for other features */}
-              <Route path="/doctors" element={<div className="p-6"><h1 className="text-2xl font-bold">Doctors Module</h1><p>Coming soon...</p></div>} />
-              <Route path="/wards" element={<div className="p-6"><h1 className="text-2xl font-bold">Ward Allotment</h1><p>Coming soon...</p></div>} />
-              <Route path="/inventory" element={<div className="p-6"><h1 className="text-2xl font-bold">Inventory Management</h1><p>Coming soon...</p></div>} />
-              <Route path="/prescriptions" element={<div className="p-6"><h1 className="text-2xl font-bold">Prescriptions</h1><p>Coming soon...</p></div>} />
-              <Route path="/monitoring" element={<div className="p-6"><h1 className="text-2xl font-bold">Real-time Monitoring</h1><p>Coming soon...</p></div>} />
-              <Route path="/emergency" element={<div className="p-6"><h1 className="text-2xl font-bold">Emergency Module</h1><p>Coming soon...</p></div>} />
+              <Route path="/doctors" element={<Doctors />} />
+              <Route path="/wards" element={<Wards />} />
+              <Route path="/inventory" element={<Inventory />} />
+              <Route path="/prescriptions" element={<Prescriptions />} />
+              <Route path="/monitoring" element={<Monitoring />} />
+              <Route path="/emergency" element={<Emergency />} />
             </Route>
 
             <Route path="/unauthorized" element={

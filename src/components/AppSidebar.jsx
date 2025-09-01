@@ -29,7 +29,7 @@ const navigationItems = [
     title: 'Dashboard',
     url: '/dashboard',
     icon: Home,
-    roles: ['doctor', 'staff', 'admin']
+    roles: ['doctor', 'staff', 'admin', 'patient']
   },
   {
     title: 'Patients',
