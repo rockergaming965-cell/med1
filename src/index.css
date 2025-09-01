@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Medical theme colors */
+    --background: 210 25% 98%;
+    --foreground: 215 25% 27%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 27%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 27%;
+
+    /* Medical blue primary */
+    --primary: 210 100% 56%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 210 100% 70%;
+
+    --secondary: 210 25% 95%;
+    --secondary-foreground: 215 25% 27%;
+
+    --muted: 210 25% 96%;
+    --muted-foreground: 215 15% 55%;
+
+    --accent: 210 25% 95%;
+    --accent-foreground: 215 25% 27%;
+
+    /* Medical status colors */
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --success: 142 70% 45%;
+    --success-foreground: 0 0% 100%;
+    
+    --warning: 38 95% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --border: 210 25% 88%;
+    --input: 210 25% 92%;
+    --ring: 210 100% 56%;
+
+    --radius: 0.75rem;
+
+    /* Medical gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(210 100% 56%), hsl(210 100% 70%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(210 25% 98%));
+    --gradient-emergency: linear-gradient(135deg, hsl(0 70% 50%), hsl(15 70% 55%));
+    --gradient-success: linear-gradient(135deg, hsl(142 70% 45%), hsl(142 70% 55%));
+    
+    /* Medical shadows */
+    --shadow-medical: 0 4px 20px -4px hsla(210, 100%, 56%, 0.15);
+    --shadow-emergency: 0 4px 20px -4px hsla(0, 70%, 50%, 0.2);
+    --shadow-card: 0 2px 10px -2px hsla(215, 25%, 27%, 0.08);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Sidebar */
+    --sidebar-background: 215 25% 96%;
+    --sidebar-foreground: 215 25% 27%;
+    --sidebar-primary: 210 100% 56%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 210 25% 92%;
+    --sidebar-accent-foreground: 215 25% 27%;
+    --sidebar-border: 210 25% 88%;
+    --sidebar-ring: 210 100% 56%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    @apply font-sans antialiased;
+  }
+}
+
+@layer components {
+  /* Medical UI Components */
+  .medical-card {
+    background-color: hsl(var(--card));
+    border: 1px solid hsl(var(--border) / 0.6);
+    box-shadow: var(--shadow-card);
+    backdrop-filter: blur(4px);
+  }
+  
+  .emergency-card {
+    background: linear-gradient(to bottom right, hsl(var(--destructive) / 0.1), hsl(var(--destructive) / 0.05));
+    border: 1px solid hsl(var(--destructive) / 0.3);
+    box-shadow: var(--shadow-emergency);
+  }
+  
+  .success-card {
+    background: linear-gradient(to bottom right, hsl(var(--success) / 0.1), hsl(var(--success) / 0.05));
+    border: 1px solid hsl(var(--success) / 0.3);
+  }
+  
+  .warning-card {
+    background: linear-gradient(to bottom right, hsl(var(--warning) / 0.1), hsl(var(--warning) / 0.05));
+    border: 1px solid hsl(var(--warning) / 0.3);
+  }
+  
+  .stat-card {
+    @apply p-6 rounded-xl transition-all duration-300;
+    background-color: hsl(var(--card));
+    border: 1px solid hsl(var(--border) / 0.6);
+    box-shadow: var(--shadow-card);
+  }
+  .stat-card:hover {
+    box-shadow: var(--shadow-medical);
+    transform: scale(1.02);
+  }
+  
+  .vital-monitor {
+    @apply p-4 rounded-lg;
+    background: linear-gradient(to bottom right, hsl(var(--background)), hsl(var(--muted) / 0.5));
+    border: 1px solid hsl(var(--border) / 0.6);
+    box-shadow: var(--shadow-card);
+  }
+  
+  /* Interactive elements */
+  .medical-button {
+    background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--primary-glow)));
+    color: hsl(var(--primary-foreground));
+    box-shadow: var(--shadow-medical);
+    transition: var(--transition-smooth);
+  }
+  .medical-button:hover {
+    box-shadow: 0 8px 24px -4px hsla(210, 100%, 56%, 0.3);
+    transform: scale(1.05);
+  }
+  
+  .emergency-button {
+    background: linear-gradient(to right, hsl(var(--destructive)), hsl(var(--destructive) / 0.8));
+    color: hsl(var(--destructive-foreground));
+    box-shadow: var(--shadow-emergency);
+    transition: var(--transition-smooth);
+  }
+  .emergency-button:hover {
+    box-shadow: 0 8px 24px -4px hsla(0, 70%, 50%, 0.3);
+    transform: scale(1.05);
+  }
+}
